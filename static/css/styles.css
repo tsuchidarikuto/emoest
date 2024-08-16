@@ -3,22 +3,33 @@ body{
     background-color: whitesmoke;
     display:flex;
     justify-content:center;
-    align-items: cneter;
+    
     height: 100vh;
     margin:0;
 }
 .container {
     width: 80%;
-    max-width: 600px;
+    max-width: 700px;
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
+.header-container{
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    position:relative;
+    text-align:center;
+    
+}
+
 
 #midashi{
-    color :#666
+    display: inline-block;
+    color :#444;
+    margin: 5px 0px;
 }
 #submitBtn{
     background-color:#7ea8df;
@@ -26,9 +37,9 @@ body{
     padding: 15px 32px;
     text-align:center;
     text-decoration:none;
-    display:inline-black;
+    display:inline-block;
     font-size:16px;
-    margin: 4px 2px;
+    margin: 10px 2px;
     cursor: pointer;
     border: 0;
     border-radius: 4px;
@@ -58,11 +69,25 @@ body{
     box-shadow: 0 2px 5px rgba(0,0,0,0.3);
 }
 
+#splitNum{
+    width: 100px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing:border-box;
+    font-size: 16px;
+}
+
+#splitNum:focus{
+    outline:none;
+    border-color:#6d72e7;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
 
 #emotionChart{
     
     margin: 20px auto;
-    display:block;
+    
 }
 
 footer{
@@ -74,4 +99,127 @@ footer{
     bottom:0;
     position:absolute;
     left:0;
+}
+
+.loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0); /* 背景を半透明にする */
+}
+
+.loader::after {
+    content: "";
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #7ea8df;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.modalbutton {
+    position: absolute;
+    border-radius: 50%;
+    border: 3px solid #444;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    background: #FFF;
+    color: #444;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 900;
+    font-size: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 260px;
+    line-height:25px
+}
+  
+.modalbutton:hover {
+    background: #444;
+    color: white;
+    cursor: pointer;
+}
+  
+.modal {
+    display: none;
+    position: fixed;
+    inset:0;
+    z-index: 1;
+    
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+    overflow: hidden;
+}
+  
+.modal-content {
+    background-color: #f4f4f4;
+    margin: 20% auto;
+    width: 50%;
+    max-width: 500px;
+    box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2),0 7px 20px 0 rgba(0,0,0,0.17);
+    animation-name: modalopen;
+    animation-duration: 1s;
+    border-radius:5px;
+}
+  
+@keyframes modalopen {
+    from {opacity: 0}
+    to {opacity: 1}
+}
+  
+.modal-header h1 {
+    margin: 1rem 0;
+    color: white;
+    font-size: 30px;
+}
+  
+.modal-header {
+    background: lightblue;
+    padding: 3px 15px;
+    display: flex;
+    justify-content: space-between;
+    border-radius:5px;
+    height: 40px;
+    align-items: center;
+    
+}
+  
+.modalClose {
+    font-size: 45px;
+    color:white;
+
+}
+  
+.modalClose:hover {
+    cursor: pointer;
+}
+  
+.modal-body {
+    padding: 10px 20px;
+    color: black;
+    text-align: left;
+    font-size: small;
+    
 }
