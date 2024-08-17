@@ -154,9 +154,22 @@ footer{
     font-size: 100%;
     top: 50%;
     transform: translateY(-50%);
-    margin-left: 260px;
-    line-height:1;
+    left: auto;
+    right: 0; /* 右側に配置 */
+    margin-left: 0;
+    margin-right: 30%; /* 見出しとの距離を調整 */
+    line-height: 1;
 }
+
+@media screen and (max-width: 480px) {
+    .modalbutton {
+        width: 20px;
+        height: 20px;
+        font-size: 80%;
+        margin-right: 30%; /* スマホ向けにスペース調整 */
+    }
+}
+
   
 .modalbutton:hover {
     background: #444;
@@ -227,5 +240,5 @@ footer{
     color: black;
     text-align: left;
     font-size: small;
-    overflow: scroll;
+    overflow-y:auto;
 }
