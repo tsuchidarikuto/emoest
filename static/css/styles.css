@@ -22,7 +22,6 @@ body{
     justify-content: center;
     position:relative;
     text-align:center;
-    
 }
 
 
@@ -118,25 +117,6 @@ footer{
     background: rgba(255, 255, 255, 0); /* 背景を半透明にする */
 }
 
-.loader::after {
-    content: "";
-    width: 50px;
-    height: 50px;
-    border: 5px solid #f3f3f3;
-    border-top: 5px solid #7ea8df;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
 .modalbutton {
     position: absolute;
     border-radius: 50%;
@@ -154,19 +134,17 @@ footer{
     font-size: 100%;
     top: 50%;
     transform: translateY(-50%);
-    left: auto;
-    right: 0; /* 右側に配置 */
-    margin-left: 0;
-    margin-right: 30%; /* 見出しとの距離を調整 */
+    right: 210px; /* midashiの右側に配置 */
     line-height: 1;
 }
 
+/* レスポンシブ対応 */
 @media screen and (max-width: 480px) {
     .modalbutton {
         width: 20px;
         height: 20px;
         font-size: 80%;
-        margin-right: 30%; /* スマホ向けにスペース調整 */
+        right: 100px; /* スマートフォン向けに位置調整 */
     }
 }
 
